@@ -19,4 +19,4 @@ COPY . .
 
 EXPOSE 3000
 #CMD [ "node", "server.js" ] For Node run
-CMD ["pm2-runtime", "app.js"]
+CMD ["pm2-runtime", "bin/www"]
