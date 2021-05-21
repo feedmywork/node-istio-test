@@ -14,9 +14,12 @@ RUN npm install --unsafe-perm \
  && npm cache clear --force \
  && npm install pm2 -g
 
+RUN apt update \
+ && apt install curl nano -y
+
 # Bundle app source
 COPY . .
 
 EXPOSE 3000
 #CMD [ "node", "server.js" ] For Node run
-CMD ["pm2-runtime", "bin/www"]
+CMD ["pm2-runtime", "bin/www", "--no-auto-exit"]
